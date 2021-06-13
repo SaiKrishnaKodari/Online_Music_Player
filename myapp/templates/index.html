@@ -1,0 +1,13 @@
+<html>
+    {% for song in music %}
+    <div>
+    <h3>{{song.name}}</h3>
+    <h6>{{song.Singer}}</h6>
+    <h6>{{song.Album_id.title}}</h6>
+    <audio controls>
+        
+        <source src="{{ song.audio_file }}" type="audio/mpeg">
+    </audio>
+</div>
+    {% endfor %}
+</html>
