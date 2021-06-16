@@ -1,13 +1,25 @@
-<html>
+<html> 
+    <style>
+        button{
+            border-radius: 50%;
+        }
+    </style>
     {% for song in music %}
-    <div>
-    <h3>{{song.name}}</h3>
+    
+    <div class='row'>
+ <h3>{{song.name}}</h3>
     <h6>{{song.Singer}}</h6>
     <h6>{{song.Album_id.title}}</h6>
-    <audio controls>
+    <audio id ='player'controls>
         
         <source src="{{ song.audio_file }}" type="audio/mpeg">
-    </audio>
+    </audio> 
+    <div> 
+        <button onclick="document.getElementById('player').play()">Play</button> 
+        <button onclick="document.getElementById('player').pause()">Pause</button> 
+        <button onclick="document.getElementById('player').volume += 0.5">Vol +</button> 
+        <button onclick="document.getElementById('player').volume -= 0.1">Vol -</button> 
+      </div>
 </div>
     {% endfor %}
 </html>
